@@ -3,6 +3,9 @@ docker stop def_nginx_1 def_php_1 def_redis_1 def_pma_1 def_adminer_1 def_postgr
 docker rm  def_nginx_1 def_php_1 def_redis_1 def_pma_1 def_adminer_1 def_postgres_1 def_mysql_1 def_node_1
 docker images
 
+docker system prune -a
+-чистит весь докер
+
 GIT
 git config --global user.name "FreyDv"
 git config --global user.email "ldfm0401@gmail.com"
@@ -18,7 +21,17 @@ git remote add origin git@github.com:FreyDv/lali.print.git
 git branch -M main
 git push -u origin main
 
-Frey040198
+
+# создать пару ключей для новой мащины
+ssh-keygen -t ed25519 -C "ldfm0401@gmail.com"
+
+# Запушить lali.print
+git push git@github.com:FreyDv/lali.print.git
+
+# взять проект с gitHub
+git pull
+
+
 
 symfony serve
 symfony server:stop
